@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <form id="frmRegister" action="~/Register/Register" method="post">
+        <table>
+            <caption>
+                <h3>Register</h3>
+            </caption>
+            <tr>
+                <td width="90px">User Name:</td>
+                <td> <input type="text" required name="txtUserName"></td>
+            </tr>
+            <tr>
+                <td width="90px">Password:</td>
+                <td> <input type="password" required name="txtPassword"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Register" />
+
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.ActionLink("Login", "Index", "Home")</td>
+
+            </tr>
+            <tr>
+                <td colspan="2">@ViewBag.Message</td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

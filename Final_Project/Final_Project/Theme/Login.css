@@ -1,0 +1,60 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+.form-login {
+    box-shadow: 1px 1px 1px 3px #c7c5c5;
+}
+
+    .form-login h1 {
+        text-align: center;
+        line-height: 100px;
+        margin-bottom: 50px;
+        color: #333;
+    }
+
+
+    .form-login input[type=text], .form-login input[type=password] {
+        outline: none;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 20px;
+    }
+
+.txt-right {
+    float: right;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #858585;
+}
+
+.txt-link {
+    text-decoration: none;
+    font-size: 14px;
+    color: #13BBEF;
+}
+
+.btn-login {
+    width: 100%;
+    border: none;
+    margin: 40px auto;
+    height: 40px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, aqua, blue);
+    color: #fff;
+}
+
+
+
+.border {
+    background: #A2A1A1;
+    margin: 20px auto;
+    height: 1px;
+}
+
+.txt-gray {
+    font-size: 14px;
+    color: #858585;
+}
+
