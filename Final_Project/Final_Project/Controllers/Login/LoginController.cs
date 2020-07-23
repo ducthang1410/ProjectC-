@@ -16,7 +16,7 @@ namespace Final_Project.Controllers.Login
         }
         public bool CheckAccount(string username, string password)
         {
-            Customer acc = AccountData.AccountList().SingleOrDefault(c => c.Cus_UserName.Equals(username)
+            Account acc = AccountData.AccountList().SingleOrDefault(c => c.Cus_UserName.Equals(username)
             && c.Cus_Password.Equals(password));
             if (acc == null)
             {
@@ -27,15 +27,17 @@ namespace Final_Project.Controllers.Login
         [HttpPost]
         public ActionResult CheckLogin(string username, string password)
         {
-            ViewBag.title = "Login to Website";
-            if (CheckAccount(username, password))
+            ViewBag.title = "Login";
+            if (CheckAccount(username, password) )
             {
-                ViewBag.Message = "User:" + username + " Logged in successful";
+                ViewBag.Message = "User: " + username + password +" Logged in successful";
 
             }
             else
             {
-                ViewBag.Message = "User:" + username + "Logged in fail";
+                ViewBag.Message = "User: " + username + password +" Logged in fail" ;
+                //ViewBag.method = new AccountData();
+                
                 ViewBag.UserName = username;
             }
             return View("LoginResult");

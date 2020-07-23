@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="JavaScript\Register.js" />
     <Content Include="Theme\GridFlex.css" />
     <Content Include="Theme\Home.css" />
     <Content Include="Theme\Login.css" />

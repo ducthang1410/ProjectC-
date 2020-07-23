@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data;
+using System.Configuration;
+using System.Collections;
 
 namespace Final_Project.Controllers.Register
 {
@@ -19,18 +22,35 @@ namespace Final_Project.Controllers.Register
         {
             string strUserName = frmcol["txtUserName"];
             string strPassword = frmcol["txtPassword"];
-            string strNationalityID = frmcol["txtCusInfor_ID"];
+            int intNationalityID =int.Parse( frmcol["txtCusInfor_ID"]);
             string strName = frmcol["txtName"];
-            //string strGender = frmcol["txtGender"];
-            //string strBirthDate = frmcol["txtBirthDate"];
-            Customer acc = new Customer
+            bool boolGender = bool.Parse(frmcol["txtGender"]);
+            string strAddress = frmcol["txtAddress"];
+            DateTime dateBirthDate = DateTime.Parse( frmcol["txtBirthDate"]);
+            string strEmail = frmcol["txtEmail"];
+            string strPhone = frmcol["txtPhone"];
+
+            Account acc = new Account
             {
                 Cus_UserName = strUserName,
                 Cus_Password = strPassword
             };
+
+            Customer cus = new Customer
+            {
+                CusInfor_Name= strName,
+                CusInfor_Address=strAddress,
+                CusInfor_BirthDate=dateBirthDate,
+                CusInfor_Email=strEmail,
+                CusInfor_Gender=boolGender,
+                CusInfor_ID=intNationalityID,
+                Cus_Infor_Phone=strPhone
+            };
+            CustomerData.CustomersList().Add(cus);
             AccountData.AccountList().Add(acc);
+             // loi
             ViewBag.Message = "Account :" + strUserName + " added successful.";
-            return View("Index");
+            return View("Register"  );
 
         }
     }

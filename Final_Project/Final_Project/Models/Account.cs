@@ -11,57 +11,52 @@ namespace Final_Project.Models
     public class Account
     {
         public string Cus_UserName { get; set; }
-        public string Cus_Password { get; set; }
-        public string CusInfor_ID { get; set; }
-        public string CusInfor_Gender { get; set; }
-        public string CusInfor_BirthDate { get; set; }
-        public string CusInfor_Email { get; set; }
-        public string CusInfor_Address { get; set; }
-        public string Cus_Infor_Phone { get; set; }
-        public string CusInfor_Name { get; set; }
+        public string Cus_Password { get; set; }        
 
+        public void output()
+        {
+            Console.WriteLine(Cus_UserName + "  " + Cus_Password);
+        }
     }
 
     public class AccountData
     {
         public static string strConnection;
+
         public AccountData()
         {
             getConnectionString();
         }
         public static string getConnectionString()
         {
-            strConnection = "server = SE130190; database = Final_Project; uid = sa; pwd = wang0944612720";
+            strConnection = "server = SE130190; database = Final_Project;User ID= sa; password = wang0944612720";
             return strConnection;
         }
 
-        
 
-        public static List<Customer> AccountList()
+
+        public static List<Account> AccountList()
         {
-            String sql = "SELECT * FROM Customer_Account,Customer_Information; ";
+            String sql = "SELECT * FROM dbo.Customer_Account; ";
             SqlConnection con = new SqlConnection(getConnectionString());
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataReader dr;
 
-            List<Customer> list = new List<Customer>();
+            List<Account> list = new List<Account>();
             try
             {
                 con.Open();
                 dr = cmd.ExecuteReader();
-                if (dr.Read()) // while dua du lieu len list lien tuc
+                /*while (dr.Read() == true)*/ // while dua du lieu len list lien tuc
+                if (dr.Read())
                 {
                     String GetUserName = dr["Cus_UserName"].ToString();
                     String GetPass = dr["Cus_Password"].ToString();
-                    String GetID = dr["CusInfor_ID"].ToString();
-                    String GetName = dr["CusInfor_Name"].ToString();
 
-                    Customer account = new Customer()
+                    Account account = new Account()
                     {
                         Cus_UserName = GetUserName,
-                        Cus_Password = GetPass,
-                        CusInfor_ID = GetID,
-                        CusInfor_Name = GetName
+                        Cus_Password = GetPass
                     };
                     list.Add(account);
                 }
@@ -79,7 +74,15 @@ namespace Final_Project.Models
             }
         }
 
-
+        public static void output()
+        {
+            foreach (Account x in AccountList())
+            {
+                x.output();
+            }
+        }
     }
+
+        
 
 }

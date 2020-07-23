@@ -10,13 +10,28 @@
     <meta name="viewport" content="width=device-width" />
     <title>Register</title>
     <title>@ViewBag.Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $(document).on('click', 'input[type="checkbox"]', function () {
+            $('input[type="checkbox"]').not(this).prop('checked', false);
+        });
+    </script>
 </head>
 <body>
+    
     <form id="frmRegister" action="~/Register/Register" method="post">
         <table>
             <caption>
                 <h3>Register</h3>
             </caption>
+            <tr>
+                <td width="90px">NationalityID:</td>
+                <td> <input type="tel" required name="txtCusInfor_ID"></td>
+            </tr>
+            <tr>
+                <td width="90px"> Name:</td>
+                <td> <input type="text" required name="txtName"></td>
+            </tr>
             <tr>
                 <td width="90px">User Name:</td>
                 <td> <input type="text" required name="txtUserName"></td>
@@ -25,6 +40,39 @@
                 <td width="90px">Password:</td>
                 <td> <input type="password" required name="txtPassword"></td>
             </tr>
+
+            <tr>
+                <td width="90px">Email:</td>
+                <td> <input type="email" required name="txtEmail"></td>
+            </tr>
+            <tr>
+                <td width="90px">BirthDate :</td>
+                <td> <input type="date" required name="txtBirthDate"></td>
+            </tr>
+
+            <tr>
+                <td class="checkbox" width="90px">
+                    Gender:
+                    <label for="male">
+                        <input type="radio" id="male" required name="txtGender" value="true" />
+                        Male
+                    </label>
+                    <label for="female">
+                        <input type="radio" id="female" required name="txtGender" value="false" />
+                        Female
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td width="90px">Phone:</td>
+                <td> <input type="tel" required name="txtPhone"></td>
+            </tr>
+            <tr>
+                <td width="90px">Address:</td>
+                <td> <input type="text" required name="txtAddress"></td>
+            </tr>
+
+
             <tr>
                 <td></td>
                 <td>
@@ -33,7 +81,7 @@
                 </td>
             </tr>
             <tr>
-                <td>@Html.ActionLink("Login", "Index", "Home")</td>
+                <td>@Html.ActionLink("Login", "Login", "Login")</td>
 
             </tr>
             <tr>
@@ -41,5 +89,7 @@
             </tr>
         </table>
     </form>
+
+
 </body>
 </html>
