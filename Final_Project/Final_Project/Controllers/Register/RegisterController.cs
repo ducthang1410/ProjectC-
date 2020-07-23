@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Data;
 using System.Configuration;
 using System.Collections;
+using System.Data.SqlTypes;
 
 namespace Final_Project.Controllers.Register
 {
@@ -26,17 +27,17 @@ namespace Final_Project.Controllers.Register
             string strName = frmcol["txtName"];
             bool boolGender = bool.Parse(frmcol["txtGender"]);
             string strAddress = frmcol["txtAddress"];
-            DateTime dateBirthDate = DateTime.Parse( frmcol["txtBirthDate"]);
+            DateTime dateBirthDate = DateTime.Parse( frmcol["txtBirthDate"]); // mm / dd/ yy
             string strEmail = frmcol["txtEmail"];
             string strPhone = frmcol["txtPhone"];
 
-            Account acc = new Account
+            Account acc = new Account()
             {
                 Cus_UserName = strUserName,
                 Cus_Password = strPassword
-            };
-
-            Customer cus = new Customer
+            };     
+            
+            Customer cus = new Customer()
             {
                 CusInfor_Name= strName,
                 CusInfor_Address=strAddress,
@@ -46,9 +47,8 @@ namespace Final_Project.Controllers.Register
                 CusInfor_ID=intNationalityID,
                 Cus_Infor_Phone=strPhone
             };
-            CustomerData.CustomersList().Add(cus);
-            AccountData.AccountList().Add(acc);
-             // loi
+            CustomerData.InsertCusInfor(cus, acc);
+
             ViewBag.Message = "Account :" + strUserName + " added successful.";
             return View("Register"  );
 

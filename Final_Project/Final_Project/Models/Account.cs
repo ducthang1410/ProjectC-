@@ -74,6 +74,27 @@ namespace Final_Project.Models
             }
         }
 
+        // change pass
+        public static void UpdateAccount(Account account)
+        {
+            SqlConnection cnn = new SqlConnection(getConnectionString());
+            string SqlUpdate = "Update Customer_Account set [Cus_Password]=@Cus_Password";
+            SqlCommand cmd = new SqlCommand(SqlUpdate, cnn);
+            cmd.Parameters.AddWithValue("@Cus_Password", account.Cus_Password);
+            try
+            {
+                cnn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error:" + ex.Message);
+            }
+            finally
+            {
+                cnn.Close();
+            }
+        }
         public static void output()
         {
             foreach (Account x in AccountList())
