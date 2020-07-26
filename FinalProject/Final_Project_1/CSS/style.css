@@ -164,10 +164,12 @@ span {
 }
 
 .p-img {
+    width: 100%;
     height: 200px;
     text-align: center;
     margin-bottom: 10px;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .p-title {
@@ -308,3 +310,11 @@ input[type=submit] {
     text-decoration: none;
 }
 
+.car-info h2, .tech-info h2 {
+    margin: 0 10px;
+    text-align: center;
+}
+
+.car-info {
+    border-right: 1px solid #ccc;
+}

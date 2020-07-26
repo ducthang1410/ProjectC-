@@ -29,8 +29,14 @@ namespace Final_Project_1.Controllers
         [HttpPost]
         public ActionResult ProductInfo(String ID)
         {   
-            var Car = CarData.getCarByID(ID);
-            return View(Car);               
+            var car = CarData.getCarByID(ID);
+            var tech = TechnologyData.getTechonologyByCarID(ID);
+            return View(new ListProductInfo()
+            {
+                Car = car,
+                Technology = tech
+            }
+            ) ;               
         }
 
         public ActionResult DescriptionProduct()
@@ -44,5 +50,11 @@ namespace Final_Project_1.Controllers
             var Tech = TechnologyData.getTechonologyByCarID(ID);
             return View(Tech);
         }
+
+        public ActionResult RegisterForm()
+        {
+            return View();
+        }
+
     }
 }

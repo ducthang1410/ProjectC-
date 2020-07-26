@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RegisterForm</title>
+</head>
+<body>
+    @Html.Partial("MenuLogin")
+
+    <div class="container mg-top-30">
+        <div class="col-12">
+            <h2 class="title">Register Form for selling car</h2>
+        </div>
+        <div class="col-8">
+            <form action="form-selling" action="~/Home/RegisterForm" method="post">
+                Username: <input type="text" placeholder="Username" /><br/>
+                Car's name: <input type="text" /><br />
+                Producer name:
+                <select>
+                    <option value="P01">HONDA</option>
+                    <option value="P02">FORD</option>
+                    <option value="P03">TOYOTA</option>
+                    <option value="P04">FERRARI</option>
+                    <option value="P05">LAMBORGINI</option>
+                    <option value="P06">HONGQI</option>
+                </select><br />
+                Car's status: 
+                <input type="checkbox" id="status1" name="Status" value="New">
+                <label for="status1"> New</label>
+                <input type="checkbox" id="status2" name="Status" value="Old">
+                <label for="status2"> Old</label><br><br />
+                Car's color: <input type="text" /><br />
+                City bought car: <input type="text" /><br />
+                Car's version: <input type="text" /><br />
+                Car's series: <input type="text" /><br />
+                Car's year produced: <input type="text" /><br />
+                Car's type: <input type="text" /><br />
+                Car's origin: <input type="text" /><br />
+                Car's Price: <input type="text" /><br />
+            </form>
+        </div>
+    </div>
+    <div class="clear"></div>
+    @Html.Partial("Footer")
+</body>
+</html>

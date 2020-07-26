@@ -106,6 +106,7 @@
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\ImageData.cs" />
     <Compile Include="Models\ListProductInfo.cs" />
+    <Compile Include="Models\RegisterSelling.cs" />
     <Compile Include="Models\TechnologyData.cs" />
     <Compile Include="Models\Producer.cs" />
     <Compile Include="Models\ProducerData.cs" />
@@ -124,7 +125,7 @@
     <Content Include="Views\Home\Cart.cshtml" />
     <Content Include="Views\Home\MenuLogin.cshtml" />
     <Content Include="Views\Home\ProductInfo.cshtml" />
-    <Content Include="Views\Home\DescriptionProduct.cshtml" />
+    <Content Include="Views\Home\RegisterForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

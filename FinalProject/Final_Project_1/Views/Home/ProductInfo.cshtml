@@ -1,4 +1,4 @@
-﻿@model Final_Project_1.Models.Car
+﻿@model Final_Project_1.Models.ListProductInfo
 
 
 <link rel="stylesheet" href="@Url.Content("~/CSS/Grid.css")" />
@@ -6,26 +6,37 @@
 
 @Html.Partial("MenuLogin")
 @{
-    Final_Project_1.Models.Car car = ViewBag.Car;
+    Final_Project_1.Models.ListProductInfo p = ViewBag.Product;
 }
 
 <div class="container mg-top">
     <div class="col-12">
         <div class="col-6">
-
-        </div>
-        <div class="col-6">
+            <h2>Car Information</h2>
             <div class="car-info">
-                <span>ID :</span> @Html.DisplayFor(Model => Model.CarID) <br />
-                <span>Name:</span> @Html.DisplayFor(Model => Model.CarName)<br />
-                <span>Status:</span> @Html.DisplayFor(Model => Model.CarStatus)<br />
-                <span>Year Of Production :</span> @Html.DisplayFor(Model => Model.CarYearOfProduction)<br />
-                <span>Type :</span> @Html.DisplayFor(Model => Model.CarType)<br />
-                <span>Origin :</span> @Html.DisplayFor(Model => Model.CarOrigin)<br />
-                <span>Price :</span> @Html.DisplayFor(Model => Model.CarPrice)<br />
-                <span>Description :</span>
-                @Html.Partial("DescriptionProduct")
+                <span>ID :</span> @Html.DisplayFor(Model => Model.Car.CarID) <br />
+                <span>Name:</span> @Html.DisplayFor(Model => Model.Car.CarName)<br />
+                <span>Status:</span> @Html.DisplayFor(Model => Model.Car.CarStatus)<br />
+                <span>Year Of Production :</span> @Html.DisplayFor(Model => Model.Car.CarYearOfProduction)<br />
+                <span>Type :</span> @Html.DisplayFor(Model => Model.Car.CarType)<br />
+                <span>Origin :</span> @Html.DisplayFor(Model => Model.Car.CarOrigin)<br />
+                <span>Price :</span> @Html.DisplayFor(Model => Model.Car.CarPrice)<br />
             </div>
+        </div>
+
+        <div class="col-6">
+            <h2>Technical Information</h2>
+             <div class="tech-info">
+                 <span>Doors :</span> @Html.DisplayFor(Model => Model.Technology.Doors)<br />
+                 <span>Chairs :</span> @Html.DisplayFor(Model => Model.Technology.Chairs)<br />
+                 <span>Engine : </span> @Html.DisplayFor(Model => Model.Technology.Engine)<br />
+                 <span>CylinderCapacity : </span> @Html.DisplayFor(Model => Model.Technology.CylinderCapacity)<br />
+                 <span>FuelTankCapacity : </span> @Html.DisplayFor(Model => Model.Technology.FuelTankCapacity)<br />
+                 <span>CarLead : </span> @Html.DisplayFor(Model => Model.Technology.CarLead)<br />
+                 <span>Fuel : </span> @Html.DisplayFor(Model => Model.Technology.Fuel)<br />
+                 <span>FuelFillingSystem : </span> @Html.DisplayFor(Model => Model.Technology.FuelFillingSystem)<br />
+                 <span>Consumption : </span> @Html.DisplayFor(Model => Model.Technology.Consumption)<br />
+             </div>           
         </div>
     </div>
 </div>
