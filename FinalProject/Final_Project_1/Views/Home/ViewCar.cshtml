@@ -1,0 +1,140 @@
+﻿
+@{
+    Layout = null;
+}
+@model Final_Project_1.Models.Car
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="@Url.Content("~/CSS/Grid.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/CSS/style.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/CSS/font-awesome.min.css")" />
+    <title>ViewCar</title>
+</head>
+<body>
+    @Html.Partial("MenuLogin")
+
+    <div class="container mg-top-30">
+        <div class="col-12">
+            <h2 class="title">New Cars</h2>
+        </div>
+
+        <div class="h-product">
+            <div class="col-4 ">
+                <div class="bg-product">
+                    <img src="~/images/n-car_1.png" class="p-img" />
+                    <div class="p-title">
+                        <form action="~/Home/ProductInfo" method="post">
+                            <input type="text" value="C01" name="ID" readonly />HONDA ANCORD
+                            <div class="price">$48.000</div>
+                            <input type="submit" value="View" />
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-4 ">
+                <div class="bg-product">
+                    <img src="~/images/n-car_2.jpg" class="p-img" />
+                    <div class="p-title">
+                        <form action="~/Home/ProductInfo" method="post">
+                            <input type="text" value="C02" name="ID" readonly />Ford Escape
+                            <div class="price">$15.000</div>
+                            <input type="submit" value="View" />
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-4 ">
+                <div class="bg-product">
+                    <img src="~/images/n-car_3.jpg" class="p-img" />
+                    <div class="p-title">
+                        <form action="~/Home/ProductInfo" method="post">
+                            <input type="text" value="C03" name="ID" readonly />TOYOTA Vios
+                            <div class="price">$20.000</div>
+                            <input type="submit" value="View" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <hr class="mg-top-30" />
+    <div class="container mg-top-30">
+        <div class="col-12 title">Cars</div>
+        <div class="col-4">
+            <div class="bg-product">
+                <img src="~/images/car1.png" class="p-img" />
+                <div class="info">
+                    <h3 class="p-title">
+                        Honda HR-V
+                    </h3>
+                    <p class="price">$33.000</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="bg-product">
+                <img src="~/images/car2.png" class="p-img" />
+                <div class="info">
+                    <h3 class="p-title">
+                        Honda HR-V
+                    </h3>
+                    <p class="price">$33.000</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="bg-product">
+                <img src="~/images/car1.png" class="p-img" />
+                <div class="info">
+                    <h3 class="p-title">
+                        Honda HR-V
+                    </h3>
+                    <p class="price">$33.000</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="bg-product">
+                <img src="~/images/car1.png" class="p-img" />
+                <div class="info">
+                    <h3 class="p-title">
+                        Honda HR-V
+                    </h3>
+                    <p class="price">$33.000</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="bg-product">
+                <img src="~/images/car1.png" class="p-img" />
+                <div class="info">
+                    <h3 class="p-title">
+                        Honda HR-V
+                    </h3>
+                    <p class="price">$33.000</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="bg-product">
+                <img src="~/images/car1.png" class="p-img" />
+                <div class="info">
+                    <h3 class="p-title">
+                        Honda HR-V
+                    </h3>
+                    <p class="price">$33.000</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    @Html.Partial("Footer")
+</body>
+</html>

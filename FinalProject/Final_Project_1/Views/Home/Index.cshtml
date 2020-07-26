@@ -1,0 +1,158 @@
+﻿
+@{
+    Layout = null;
+    Final_Project_1.Models.Car car = Final_Project_1.Models.CarData.GetAllCars().SingleOrDefault(c => c.CarID.Equals("1"));
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="@Url.Content("~/themes/default/default.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/CSS/Grid.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/CSS/nivo-slider.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/CSS/style.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/CSS/font-awesome.min.css")" />
+    <title>Home Page</title>
+</head>
+<body>
+
+    @Html.Partial("MenuLogin")
+
+    <div id="container-fluid">
+        <div class="slider-wrapper theme-default">
+            <div id="slider" class="nivoSlider">
+                <img src="~/images/Slider_1.jpg">
+                <img src="~/images/Slider_2.jpg">
+                <img src="~/images/Slider_1.jpg">
+                <img src="~/images/Slider_2.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="title">About us</div>
+        <div class="about mg-top">
+            <img src="~/images/About.jpg" />
+            <h3>Reliable place to buy cars</h3>
+            <p>
+                Today, when the standard of living is higher and higher, the need to buy Vietnamese cars is increasingly popular.
+                Capturing the psychology of buying good-price cars from Vietnamese customers, <span>3StarsAuto</span> - Website selling new cars with the best price nationwide was launched.
+            </p>
+            <p>
+                Meanwhile, Vietnamese customers wishing to buy cars can "freely" choose from many car models
+                with different price ranges for cars, from popular car segments such as Toyota, Hyundai, Ford, Honda, Vinfast, Suzuki to luxury car brands BMW, Mercedes-Benz, Audi, Land Rover, ...
+            </p>
+            <p>
+                In particular, customers who buy cars can compare models and prices of cars of all kinds, thereby making easy decisions about buying a reasonable car.
+                In addition, customers can also contact the administrator directly to get the best advice on the models they are interested in.
+            </p>
+        </div>
+    </div>
+    <div class="container-fluid bg-img mg-top">
+        <div class="container">
+            <div class="col-12">
+                <h2 class="intro-title">Best website for buying car in Viet Nam</h2>
+            </div>
+            <div class="content mg-top-30">
+                <div class="col-3">
+                    <div class="bg-content">
+                        <div class="icon">
+                            <i class="fa fa-car"></i>
+                        </div>
+                        <h3>Buy reasonable car</h3>
+                        <p>We'll bring to you the best price and best quality of car</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="bg-content">
+                        <div class="icon">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <h3>Easy search your car</h3>
+                        <p>Easy to find the car that you want with their ID or name</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="bg-content">
+                        <div class="icon">
+                            <i class="fa fa-newspaper-o"></i>
+                        </div>
+                        <h3>
+                            Multidimensional news
+                        </h3>
+                        <p>Provide the newest of promotions and new cars </p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="bg-content">
+                        <div class="icon">
+                            <i class="fa fa-handshake-o"></i>
+                        </div>
+                        <h3>Support advicing cars</h3>
+                        <p>Give advices to buy the car that is most suitable for you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="container mg-top-30">
+        <div class="col-12">
+            <h2 class="title">News Cars</h2>
+        </div>
+        <div class="h-product">
+            <div class="col-4 ">
+                <div class="bg-product">
+                    <img src="~/images/n-car_1.png" class="p-img" />
+                    <div class="p-title">
+                        <form action="~/Home/ProductInfo" method="post">
+                            <input type="text" value="C01" name="ID" readonly />HONDA ANCORD
+                            <div class="price">$48.000</div>
+                            <input type="submit" value="View" />
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-4 ">
+                <div class="bg-product">
+                    <img src="~/images/n-car_2.jpg" class="p-img" />
+                    <div class="p-title">
+                        <form action="~/Home/ProductInfo" method="post">
+                            <input type="text" value="C02" name="ID" readonly />Ford Escape
+                            <div class="price">$15.000</div>
+                            <input type="submit" value="View" />
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-4 ">
+                <div class="bg-product">
+                    <img src="~/images/n-car_3.jpg" class="p-img" />
+                    <div class="p-title">
+                        <form action="~/Home/ProductInfo" method="post">
+                            <input type="text" value="C03" name="ID" readonly />TOYOTA Vios
+                            <div class="price">$20.000</div>
+                            <input type="submit" value="View" />
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    @Html.Partial("Footer")
+
+    <script src="~/JS/jquery-1.7.1.min.js"></script>
+    <script src="~/JS/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#slider').nivoSlider();
+        });
+    </script>
+</body>
+</html>

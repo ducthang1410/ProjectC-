@@ -1,0 +1,33 @@
+﻿@model Final_Project_1.Models.Car
+
+
+<link rel="stylesheet" href="@Url.Content("~/CSS/Grid.css")" />
+<link rel="stylesheet" href="@Url.Content("~/CSS/style.css")" />
+
+@Html.Partial("MenuLogin")
+@{
+    Final_Project_1.Models.Car car = ViewBag.Car;
+}
+
+<div class="container mg-top">
+    <div class="col-12">
+        <div class="col-6">
+
+        </div>
+        <div class="col-6">
+            <div class="car-info">
+                <span>ID :</span> @Html.DisplayFor(Model => Model.CarID) <br />
+                <span>Name:</span> @Html.DisplayFor(Model => Model.CarName)<br />
+                <span>Status:</span> @Html.DisplayFor(Model => Model.CarStatus)<br />
+                <span>Year Of Production :</span> @Html.DisplayFor(Model => Model.CarYearOfProduction)<br />
+                <span>Type :</span> @Html.DisplayFor(Model => Model.CarType)<br />
+                <span>Origin :</span> @Html.DisplayFor(Model => Model.CarOrigin)<br />
+                <span>Price :</span> @Html.DisplayFor(Model => Model.CarPrice)<br />
+                <span>Description :</span>
+                @Html.Partial("DescriptionProduct")
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+@Html.Partial("Footer")
